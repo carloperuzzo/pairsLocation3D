@@ -1,0 +1,139 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4293,        131]
+NotebookOptionsPosition[      3818,        114]
+NotebookOutlinePosition[      4213,        130]
+CellTagsIndexPosition[      4170,        127]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"path", "=", 
+  RowBox[{"NotebookDirectory", "[", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pairs", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"path", "<>", "\"\<close_pairs.csv\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"points", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{"path", "<>", "\"\<points.csv\>\""}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dist", "[", 
+    RowBox[{"p1_", ",", "p2_"}], "]"}], ":=", 
+   SqrtBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"p1", "-", "p2"}], ")"}], ".", 
+     RowBox[{"(", 
+      RowBox[{"p1", "-", "p2"}], ")"}]}]]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xyzpairs", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ";;"}], "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ";;"}], "]"}], "]"}]}], "}"}], "&"}], "/@", "pairs"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dd", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dist", "[", 
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", 
+      RowBox[{"#", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "&"}], "/@", 
+   "xyzpairs"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlot", "[", "dd", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xyz", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "2", "]"}], "]"}], ",", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "3", "]"}], "]"}], ",", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "4", "]"}], "]"}]}], "}"}], "&"}], "/@", "points"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPointPlot3D", "[", "xyz", 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.89900358021378*^9, 3.899003723590754*^9}, {
+  3.8990045497868433`*^9, 3.899004551004464*^9}, {3.8990064624309187`*^9, 
+  3.899006476845798*^9}, {3.8990066965406446`*^9, 3.899006701251001*^9}, {
+  3.899008262201696*^9, 3.899008296568677*^9}, {3.899121413309956*^9, 
+  3.8991214449911413`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"47bcea97-90e6-4de6-90fb-0a70470e7dc3"],
+
+Cell[BoxData["\<\"/Users/carloperuzzo/PycharmProjects/pythonProject/\"\>"], \
+"Output",
+ CellChangeTimes->{{3.899003632042943*^9, 3.8990036600789013`*^9}, 
+   3.899003724767623*^9, 3.8990045518919373`*^9, {3.8990064633127947`*^9, 
+   3.899006477635131*^9}, 3.899006701825159*^9, 3.899007112676424*^9, 
+   3.8990073971610126`*^9, 3.899007438877392*^9, 3.899008256754655*^9, 
+   3.8990083036703176`*^9, 3.899008716861352*^9, 3.899008805620161*^9, 
+   3.8990094977704153`*^9, 3.89912144712894*^9, 3.899122279805931*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"f285d492-8896-4308-9c77-586997c3e30a"]
+}, Open  ]]
+},
+WindowSize->{606, 564},
+WindowMargins->{{256, Automatic}, {118, Automatic}},
+FrontEndVersion->"13.1 for Mac OS X x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"1e048916-c8f9-429a-8371-d6ae5e61e4b7"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2625, 79, 285, "Input",ExpressionUUID->"47bcea97-90e6-4de6-90fb-0a70470e7dc3"],
+Cell[3208, 103, 594, 8, 34, "Output",ExpressionUUID->"f285d492-8896-4308-9c77-586997c3e30a"]
+}, Open  ]]
+}
+]
+*)
+
