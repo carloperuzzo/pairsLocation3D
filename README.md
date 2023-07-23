@@ -17,3 +17,6 @@ I have run the code using a MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)
 with the following characteristics: \
 Memory: 8 GB 2133 MHz LPDDR3 \
 Processor: 2.3 GHz Dual-Core Intel Core i5
+
+
+A Mathematica file named "visualize_results.nb" can be used to check the 3D cloud of points and the distances between each pair.
